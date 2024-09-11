@@ -1,0 +1,26 @@
+{% load static %}
+
+body{
+    padding: 0px;
+    margin: 0px;
+    height: 100vh;
+}
+
+header {
+    height: 10%;
+    background: #cbcbcb;
+}
+main {
+    height: 80%;
+    background: #ededed;
+    display: grid;
+    grid-template-columns: 0.5fr minmax(400px, 700px) 0.5fr;
+}
+footer{
+    height: 10%;
+    background: #cbcbcb;
+}
+#main_area {
+    background: #ffffff;
+}
+
