@@ -8,10 +8,10 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, Pass
 
 
 class RegisterUserForm(UserCreationForm):
-    username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'form-input', 'placeholder':'Логин'}))
-    email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'class': 'form-input', 'placeholder':'Введите email'}))
-    password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input', 'placeholder':'Пароль'}))
-    password2 = forms.CharField(label='Повтор пароля', widget=forms.PasswordInput(attrs={'class': 'form-input', 'placeholder':'Повторите пароль'}))
+    username = forms.CharField(label='', widget=forms.TextInput(attrs={'class': 'form-input', 'placeholder':'Логин'}))
+    email = forms.EmailField(label='', widget=forms.EmailInput(attrs={'class': 'form-input', 'placeholder':'Введите email'}))
+    password1 = forms.CharField(label='', widget=forms.PasswordInput(attrs={'class': 'form-input', 'placeholder':'Пароль'}))
+    password2 = forms.CharField(label='', widget=forms.PasswordInput(attrs={'class': 'form-input', 'placeholder':'Повторите пароль'}))
 
     class Meta:
         model = get_user_model()
@@ -26,9 +26,9 @@ class RegisterUserForm(UserCreationForm):
 
 
 class LoginUserForm(AuthenticationForm):
-    username = forms.CharField(label='Логин/Email',
+    username = forms.CharField(label='',
                                widget=forms.TextInput(attrs={'class': 'form-input','placeholder':'Введите логин'}))
-    password = forms.CharField(label='Пароль',
+    password = forms.CharField(label='',
                                widget=forms.PasswordInput(attrs={'class': 'form-input','placeholder':'Введите пароль'}))
 
 
