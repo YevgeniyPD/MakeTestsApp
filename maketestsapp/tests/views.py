@@ -11,7 +11,7 @@ from users.forms import RegisterUserForm, LoginUserForm
 
 class hometestsapp(DataMixin, ListView):
     model = Tests
-    template_name = 'tests/home.html'
+    template_name = 'tests/base.html'
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
