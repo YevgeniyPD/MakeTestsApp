@@ -11,9 +11,14 @@
         {% for m in menu %}
         <li class="menu" ><a href="{% url m.url_name %}">{{m.title}}</a></li>
         {% endfor %}
-        {% for a in auth %}
-        <li class="auth" ><a href="{% url a.url_name %}">{{a.title}}</a></li>
-        {% endfor %}
+
+        <ul>
+		{% if request.user.is_authenticated %}
+		<li class="last_menu"><a href="{% url 'tests:logout' %}">Выйти</a><span>|</span>{{user.username}}</li>
+		{% else %}
+		<li class="last_menu"><a href="{% url 'tests:register' %}">Регистрация</a> <span>|</span> <a href="{% url 'tests:login' %}">Войти</a></li>
+		{% endif %}
+		</ul>
     </header>
     <main>
         <div></div>

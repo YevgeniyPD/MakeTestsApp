@@ -1,26 +1,108 @@
 {% load static %}
 
-body{
-    padding: 0px;
-    margin: 0px;
+body {
+    padding: 0;
+    margin: 0;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #ededed;
 }
 
-header {
+header, footer {
     height: 10%;
     background: #cbcbcb;
 }
+
 main {
-    height: 80%;
-    background: #ededed;
-    display: grid;
-    grid-template-columns: 0.5fr minmax(400px, 700px) 0.5fr;
-}
-footer{
-    height: 10%;
-    background: #cbcbcb;
-}
-#main_area {
-    background: #ffffff;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
 }
 
+#main_area {
+    width: 50%;
+}
+
+#form_container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+#form_title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form_p {
+    margin: 15px 0;
+}
+
+input,
+select,
+textarea {
+    width: 75%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
+    text-align: center;
+}
+
+.form-error {
+    color: #d9534f;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.btn_form {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    width: 75%;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.btn_form:hover {
+    background-color: #4cae4c;
+}
+
+#form_footer, #form_footer_login {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form_link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form_link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
