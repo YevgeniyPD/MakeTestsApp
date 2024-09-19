@@ -1,0 +1,20 @@
+{% extends 'tests/base.html' %}
+
+{% block content %}
+<div id="main_area">
+<div id="form_title"><span>Регистрация</span></div>
+<div id="form_fields_registr">
+    <form method="post">
+        {% csrf_token %}
+        {% for f in form %}
+        <p class="form_p"><label class="form-label" for="{{ f.id_for_label}}"> {{f.label}} </label>{{ f }}</p>
+        <div class="form-error">{{ f.errors }}</div>
+        {% endfor %}
+        <div id="button_form"><button class="btn_form" type="submit">Регистрация</button></div>
+    </form>
+</div>
+<div id="form_footer">
+    <span> <a class="form_link" href="{% url 'tests:login' %}"> Уже есть аккаунт на сайте?</a></span>
+</div>
+    </div>
+{% endblock %}

@@ -1,8 +1,8 @@
 from django.db.models import Count
 
 
-menu = [{'title': "Пройти тест", 'url_name': 'core:'},
-        {'title': "Создать тест", 'url_name': 'core:'},
+menu = [{'title': "Создать тест", 'url_name': 'tests:addtest'},
+        {'title': "Пройти тест", 'url_name': 'tests:test'},
 ]
 
 class DataMixin:

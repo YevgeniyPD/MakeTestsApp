@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'tests/css/styles.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/main.ico' %}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        {% for m in menu %}
+        <li class="menu" ><a href="{% url m.url_name %}">{{m.title}}</a></li>
+        {% endfor %}
+		{% if request.user.is_authenticated %}
+		<li class="menu_auth"><a href="{% url 'tests:logout' %}">Выйти</a><span>|</span>{{user.username}}</li>
+		{% else %}
+		<li class="menu_auth"><a href="{% url 'tests:register' %}">Регистрация</a> <span>|</span> <a href="{% url 'tests:login' %}">Войти</a></li>
+		{% endif %}
+    </header>
+    <main>
+        <div></div>
+            {% block content %}{% endblock content %}
+        <div></div>
+    </main>
+    <footer></footer>
+</body>
+</html>
