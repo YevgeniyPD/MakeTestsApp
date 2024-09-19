@@ -4,6 +4,8 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import View
 from django.contrib.auth import logout, login
+
+from tests.forms import AddTestForm
 from .utils import *
 from django.views.generic import ListView, DetailView, CreateView, FormView, UpdateView
 from .models import *
@@ -18,8 +20,9 @@ class hometestsapp(DataMixin, ListView):
         c_def = self.get_user_context(title="Главная страница")
         return dict(list(context.items()) + list(c_def.items()))
 
-class AddTest(DataMixin, ListView):
+class AddTest(DataMixin, CreateView):
     model = Tests
+    form_class = AddTestForm
     template_name = 'tests/addtest.html'
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -27,12 +30,12 @@ class AddTest(DataMixin, ListView):
         c_def = self.get_user_context(title="Создать тест")
         return dict(list(context.items()) + list(c_def.items()))
 
-    # def form_valid(self, form):
-    #     w = form.save(commit=False)
-    #     w.author = self.request.user
-    #     return super().form_valid(form)
+    def form_valid(self, form):
+        w = form.save(commit=False)
+        w.author = self.request.user
+        return super().form_valid(form)
 
-class Test(DataMixin, ListView):
+class Tests(DataMixin, ListView):
     model = Tests
     template_name = 'tests/tests.html'
 

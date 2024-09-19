@@ -6,7 +6,6 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm
 
 
-
 class RegisterUserForm(UserCreationForm):
     username = forms.CharField(label='', widget=forms.TextInput(attrs={'class': 'form-input', 'placeholder':'Логин'}))
     email = forms.EmailField(label='', widget=forms.EmailInput(attrs={'class': 'form-input', 'placeholder':'Введите email'}))
@@ -22,7 +21,6 @@ class RegisterUserForm(UserCreationForm):
         if get_user_model().objects.filter(email=email).exists():
             raise forms.ValidationError("Такой E-mail уже существует!")
         return email
-
 
 
 class LoginUserForm(AuthenticationForm):

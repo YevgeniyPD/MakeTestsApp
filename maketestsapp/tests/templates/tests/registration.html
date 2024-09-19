@@ -1,8 +1,9 @@
 {% extends 'tests/base.html' %}
 
 {% block content %}
+<div id="main_area">
 <div id="form_title"><span>Регистрация</span></div>
-<div id="form_fields_registr" >
+<div id="form_fields_registr">
     <form method="post">
         {% csrf_token %}
         {% for f in form %}
@@ -15,4 +16,5 @@
 <div id="form_footer">
     <span> <a class="form_link" href="{% url 'tests:login' %}"> Уже есть аккаунт на сайте?</a></span>
 </div>
+    </div>
 {% endblock %}

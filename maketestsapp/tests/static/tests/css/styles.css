@@ -106,3 +106,42 @@ textarea::placeholder {
     text-decoration: underline;
     color: #0056b3;
 }
+
+.tests_content{
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    width: 100%;
+    height: 100%;
+}
+.tests_list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+}
+.tests_header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.test_list_style {
+    background: #efefef;
+}
+.menu{
+    float: left;
+    outline: none;
+    text-decoration: none;
+    overflow: hidden;
+    list-style: none;
+    margin: 30px;
+}
+.menu_auth{
+    float: right;
+    outline: none;
+    text-decoration: none;
+    overflow: hidden;
+    list-style: none;
+    margin: 30px;
+}

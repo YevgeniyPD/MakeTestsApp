@@ -1,6 +1,7 @@
 {% extends 'tests/base.html' %}
 
 {% block content %}
+<div id="main_area">
 <div id="form_title"><span>Авторизация</span></div>
     <div id="form_fields_login">
         <form method="post">
@@ -21,4 +22,5 @@
         <span> <a class="form_link" href="{% url 'tests:register' %}"> У вас еще нет аккаунта на сайте?</a></span>
     </div>
 </div>
+    </div>
 {% endblock %}
