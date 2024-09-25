@@ -4,6 +4,7 @@
 <div id="main_area">
 <div id="form_title"><span>Создать тест</span></div>
     <form method="post">
+        {% csrf_token %}
         {% for f in form %}
         <p class="form_p">{{ f }}</p>
         <div class="form-error">{{ f.errors }}</div>
